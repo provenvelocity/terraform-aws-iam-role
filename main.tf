@@ -46,7 +46,7 @@ resource "aws_iam_role" "default" {
 
 module "aggregated_policy" {
   source           = "git::https://github.com/provenvelocity/terraform-aws-iam-policy-document-aggregator.git?ref=master"
-  source_documents = [var.policy_documents]
+  source_documents = var.policy_documents
 }
 
 resource "aws_iam_policy" "default" {
